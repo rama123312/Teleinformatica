@@ -1,0 +1,68 @@
+body
+{
+    margin: 0;
+}
+.padre{ display: flex;
+    justify-content: space-around;
+    margin-top: 15%;
+}
+.hijo1{
+    width: 200px;
+    height: 200px;
+    background-color:   rgb(150, 6, 6);
+    border-radius: 10px;
+}
+.hijo2{
+    width: 200px;
+    height: 200px;
+    background-color: rgba(168, 5, 5, 0.726);
+    border-radius: 10px;
+}
+.hijo3{
+    width: 200px;
+    height: 200px;
+    background-color: rgba(141, 7, 7, 0.747);
+    border-radius: 10px;
+}
+.nav{
+    width: 100vw;
+    height: 15vh;
+    background-color: rgb(88, 3, 3);
+    /*border-radius: 10px;*/
+    display: flex;
+    justify-content: space-between;
+}
+.logo{
+    display: flex;
+    justify-content: space-between;
+    width: 15vh;
+    height: 100%;
+    margin-left: 0px;
+}
+.links
+{
+    display: flex;
+    flex-direction: column;
+    margin-right: 2%;
+    height: 100%;
+}
+@media (max-width: 468px)
+{
+.padre
+{
+    display: flex;
+    flex-direction: column !important;
+    margin-left: calc(50vw - 100px);
+    margin-right: calc(50vw - 100px);
+}
+.hijo2
+{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.logo
+{
+    width: 15vh;
+    height: 100%;
+}
+}
