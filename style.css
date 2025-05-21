@@ -1,68 +1,131 @@
-body
-{
-    margin: 0;
+body{
+  background-color: #000;
 }
-.padre{ display: flex;
-    justify-content: space-around;
-    margin-top: 15%;
+.carousel-container {
+  width: 750px;
+  height: 500px;
+  margin: 30px auto;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0px 15px 20px rgba(7, 148, 190, 0.25);
+  position: relative;
+background: linear-gradient(135deg, rgb(10, 197, 197) 0%, #1a1a1a 100%);
+color: white;
+font-family: 'Arial', sans-serif;
 }
-.hijo1{
-    width: 200px;
-    height: 200px;
-    background-color:   rgb(150, 6, 6);
-    border-radius: 10px;
+.carousel {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 600px !important;
+  max-height: 400px !important;
+  margin: 0 auto;
+  position: relative;
 }
-.hijo2{
-    width: 200px;
-    height: 200px;
-    background-color: rgba(168, 5, 5, 0.726);
-    border-radius: 10px;
+.carousel-item {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 600px !important;
+  max-height: 400px !important;
+  overflow: hidden;
+  position: relative;
 }
-.hijo3{
-    width: 200px;
-    height: 200px;
-    background-color: rgba(141, 7, 7, 0.747);
-    border-radius: 10px;
+.carousel-item img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 600px !important;
+  max-height: 400px !important;
+  object-fit: cover;
+  transition: transform 1s ease;
+  display: block;
+  margin: 0 auto;
 }
-.nav{
-    width: 100vw;
-    height: 15vh;
-    background-color: rgb(88, 3, 3);
-    /*border-radius: 10px;*/
-    display: flex;
-    justify-content: space-between;
+.carousel-item img {
+transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
 }
-.logo{
-    display: flex;
-    justify-content: space-between;
-    width: 15vh;
-    height: 100%;
-    margin-left: 0px;
+
+.carousel-item img:hover {
+transform: scale(1.05);
+filter: brightness(1.1) contrast(1.1);
 }
-.links
-{
-    display: flex;
-    flex-direction: column;
-    margin-right: 2%;
-    height: 100%;
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+background-size: 100% 100%;
+filter: invert(56%) sepia(98%) saturate(750%) hue-rotate(150deg) brightness(95%) contrast(90%);
+width: 60px;
+height: 60px;
+margin-left: 5%;
+margin-right: 5%;
 }
-@media (max-width: 468px)
-{
-.padre
-{
-    display: flex;
-    flex-direction: column !important;
-    margin-left: calc(50vw - 100px);
-    margin-right: calc(50vw - 100px);
+.carousel-item {
+transition: transform 0.3s ease, opacity 0.7s ease;
+opacity: 0;
+transform: translateX(50px) scale(0.98);
 }
-.hijo2
-{
-    margin-top: 20px;
-    margin-bottom: 20px;
+
+.carousel-item.active {
+opacity: 1;
+transform: translateX(0) scale(1);
 }
-.logo
-{
-    width: 15vh;
-    height: 100%;
+.btn-info {
+background-color: rgb(4, 133, 133);
+border: none;
+color: black;
+font-weight: bold;
+}
+
+.btn-info:hover {
+background-color: rgb(3, 73, 73);
+color: white;
+}
+.offcanvas-end {
+transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+opacity: 0;
+backdrop-filter: blur(0px);
+}
+.carousel-indicators [data-bs-target] {
+background-color: cyan;
+width: 12px;
+height: 12px;
+border-radius: 50%;
+margin-top: 5%;
+}
+
+.carousel-indicators .active {
+background-color: white;
+width: 14px;
+height: 14px;
+margin-top: 5%;
+}
+.carousel-indicators [data-bs-target] {
+background-color: #0cc;
+width: 12px;
+height: 12px;
+border-radius: 50%;
+margin: 0 6px;
+opacity: 0.5;
+transition: all 0.3s ease;
+border: none;
+}
+
+.carousel-indicators .active {
+background-color: white;
+width: 16px;
+height: 16px;
+opacity: 1;
+animation: pulse 0.6s ease-out;
+}
+
+@keyframes pulse {
+0% {
+transform: scale(1);
+box-shadow: 0 0 0 rgba(255, 255, 255, 0.4);
+}
+50% {
+transform: scale(1.3);
+box-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+}
+100% {
+transform: scale(1);
+box-shadow: 0 0 0 rgba(255, 255, 255, 0);
 }
 }
